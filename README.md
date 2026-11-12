@@ -1,6 +1,6 @@
 # Abhishek Pradhan — Personal Website
 
-Hello World website - SPA website built with React and Vite. It includes Home, About, Blog, and Contact pages (all content is made up, except contact details)
+Hello World website - SPA app built with React and Vite. It includes Home, About, Blog, and Contact pages (all content is made up, except contact details)
 
 > [!NOTE]
 > This website serves as POC for the Development environment & Technology selected - see below 2 sections for more details.
@@ -16,7 +16,7 @@ The website was created using Ubuntu on WSL on a Windows 11 arm64 laptop, with V
 - **Vite 5** — development server and production bundler
 - **Astryx Design System** (`@astryxdesign/core`) — UI components and base styles - An open source design system that's fully customizable and agent ready
 - **Astryx CLI** - used by AI agents
-- **Astryx theme** (`@astryxdesign/theme-gothic`) — site theme
+- **Astryx theme** (`@astryxdesign/theme-matcha`) — site theme
 - **CSS** — site-specific styling
 - **npm** — dependency management
 

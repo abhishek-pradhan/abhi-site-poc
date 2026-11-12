@@ -1,8 +1,7 @@
-/* Atryx Design System - Core Reset, Base Styles, and Theme Gothic */
+/* Astryx Design System - Core Reset and Base Styles */
 /* Layer order: reset → astryx-base → astryx-theme */
 @import '@astryxdesign/core/reset.css';
 @import '@astryxdesign/core/astryx.css';
-@import '@astryxdesign/theme-gothic/theme.css';
 
 /* Custom properties for brand overrides - using theme's CSS variables */
 :root {

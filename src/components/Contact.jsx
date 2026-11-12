@@ -120,19 +120,16 @@ export default function Contact() {
 
                 <HStack gap={3}>
                   {socialLinks.map((social) => (
-                    <Link
+                    <Button
                       key={social.name}
+                      variant="ghost"
+                      size="md"
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                    >
-                      <Button
-                        variant="ghost"
-                        size="md"
-                        icon={<Icon icon={social.icon} size="sm" />}
-                        label={social.name}
-                      />
-                    </Link>
+                      icon={<Icon icon={social.icon} size="sm" />}
+                      label={social.name}
+                    />
                   ))}
                 </HStack>
               </VStack>

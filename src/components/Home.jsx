@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import {
   Section,
   HStack,
@@ -14,6 +13,7 @@ import {
   Heading,
   Divider,
 } from '@astryxdesign/core';
+import RouterLink from './RouterLink';
 
 const projects = [
   {
@@ -61,7 +61,7 @@ export default function Home() {
             align="center"
             justify="between"
           >
-            <StackItem size="grow" minWidth={300}>
+            <StackItem size="fill" style={{ minWidth: 300 }}>
               <VStack gap={4} align="start">
                 <Badge variant="subtle" size="sm">
                   Software Engineer & Cloud Architect
@@ -76,20 +76,24 @@ export default function Home() {
                   San Francisco, CA.
                 </Text>
                 <HStack gap={3} wrap="wrap">
-                  <NavLink to="/about">
-                    <Button variant="primary" size="md">
-                      About Me
-                    </Button>
-                  </NavLink>
-                  <NavLink to="/contact">
-                    <Button variant="ghost" size="md">
-                      Get in Touch
-                    </Button>
-                  </NavLink>
+                  <Button
+                    variant="primary"
+                    size="md"
+                    href="/about"
+                    as={RouterLink}
+                    label="About Me"
+                  />
+                  <Button
+                    variant="ghost"
+                    size="md"
+                    href="/contact"
+                    as={RouterLink}
+                    label="Get in Touch"
+                  />
                 </HStack>
               </VStack>
             </StackItem>
-            <StackItem size="shrink" minWidth={280} maxWidth={320}>
+            <StackItem size="static" style={{ minWidth: 280, maxWidth: 320 }}>
               <VStack align="center" gap={3}>
                 <Card variant="muted" padding={4} width="100%" style={{ aspectRatio: '1' }}>
                   <VStack align="center" justify="center" gap={3}>

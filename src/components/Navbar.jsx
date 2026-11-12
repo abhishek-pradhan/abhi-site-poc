@@ -1,5 +1,4 @@
 import { useLocation } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import {
   TopNav,
   TopNavHeading,
@@ -12,6 +11,7 @@ import {
   Icon,
 } from '@astryxdesign/core';
 import { useState } from 'react';
+import RouterLink from './RouterLink';
 
 const navItems = [
   { path: '/', label: 'Home' },
@@ -41,19 +41,13 @@ export default function Navbar() {
         startContent={
           <>
             {navItems.map((item) => (
-              <NavLink
+              <TopNavItem
                 key={item.path}
-                to={item.path}
-                onClick={() => setMobileNavOpen(false)}
-              >
-                {({ isActive: isActiveRoute }) => (
-                  <TopNavItem
-                    label={item.label}
-                    href={item.path}
-                    isSelected={isActiveRoute}
-                  />
-                )}
-              </NavLink>
+                label={item.label}
+                href={item.path}
+                as={RouterLink}
+                isSelected={isActive(item.path)}
+              />
             ))}
           </>
         }
@@ -71,19 +65,14 @@ export default function Navbar() {
       >
         <SideNavSection title="Main">
           {navItems.map((item) => (
-            <NavLink
+            <SideNavItem
               key={item.path}
-              to={item.path}
+              label={item.label}
+              href={item.path}
+              as={RouterLink}
+              isSelected={isActive(item.path)}
               onClick={() => setMobileNavOpen(false)}
-            >
-              {({ isActive: isActiveRoute }) => (
-                <SideNavItem
-                  label={item.label}
-                  href={item.path}
-                  isSelected={isActiveRoute}
-                />
-              )}
-            </NavLink>
+            />
           ))}
         </SideNavSection>
       </MobileNav>

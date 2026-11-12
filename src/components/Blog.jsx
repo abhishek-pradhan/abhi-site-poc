@@ -56,7 +56,7 @@ export default function Blog() {
     <Section variant="transparent" paddingBlock={8} paddingInline={4}>
         <VStack gap={6} align="start">
           <VStack gap={2} align="center" style={{ textAlign: 'center' }}>
-            <Heading level={2} size="xl" weight="bold" style={{ letterSpacing: '-0.02em' }}>
+            <Heading level={1} size="xl" weight="bold" style={{ letterSpacing: '-0.02em' }}>
               Blog
             </Heading>
             <Text size="lg" color="secondary" style={{ maxWidth: '600px' }}>
@@ -65,10 +65,7 @@ export default function Blog() {
             </Text>
           </VStack>
 
-          <Grid columns={3} gap={4} responsive={[
-            { maxWidth: 900, columns: 2 },
-            { maxWidth: 600, columns: 1 },
-          ]}>
+          <Grid columns={{ minWidth: 240, max: 3 }} gap={4}>
             {posts.map((post) => (
               <GridSpan key={post.id}>
                 <Card variant="default" padding={4} elevation="low" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>

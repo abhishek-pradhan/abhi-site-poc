@@ -95,7 +95,7 @@ export default function Home() {
             </StackItem>
             <StackItem size="static" style={{ minWidth: 280, maxWidth: 320 }}>
               <VStack align="center" gap={3}>
-                <Card variant="muted" padding={4} width="100%" style={{ aspectRatio: '1' }}>
+                <Card variant="default" padding={4} width="100%" style={{ aspectRatio: '1' }}>
                   <VStack align="center" justify="center" gap={3}>
                     <img src="/profile.svg" alt="Abhishek Pradhan" style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover' }} />
                     <Text weight="medium" color="secondary">
@@ -114,16 +114,15 @@ export default function Home() {
             <Heading level={2} size="xl" weight="bold" style={{ letterSpacing: '-0.02em' }}>
               Featured Projects
             </Heading>
-            <Grid columns={3} gap={4} responsive={[
-              { maxWidth: 900, columns: 2 },
-              { maxWidth: 600, columns: 1 },
-            ]}>
+            <Grid columns={{ minWidth: 240, max: 3 }} gap={4}>
               {projects.map((project) => (
                 <GridSpan key={project.id}>
                   <Card variant="default" padding={4} elevation="low" style={{ height: '100%', transition: 'transform 0.2s, box-shadow 0.2s' }}>
                     <VStack gap={3}>
                       <HStack gap={3} align="center">
-                        <span style={{ fontSize: '2rem' }}>{project.icon}</span>
+                        <Text size="xl" aria-hidden="true" style={{ fontSize: '2rem' }}>
+                          {project.icon}
+                        </Text>
                       </HStack>
                       <VStack gap={2} align="start">
                         <Heading level={3} size="md" weight="bold">
@@ -151,10 +150,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <Section variant="muted" paddingBlock={6} paddingInline={4}>
-          <Grid columns={4} gap={4} responsive={[
-            { maxWidth: 900, columns: 2 },
-            { maxWidth: 480, columns: 1 },
-          ]}>
+          <Grid columns={{ minWidth: 180, max: 4 }} gap={4}>
             {stats.map((stat) => (
               <GridSpan key={stat.label}>
                 <VStack align="center" gap={1}>

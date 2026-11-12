@@ -87,10 +87,10 @@ export default function Contact() {
 
   return (
     <Section variant="transparent" paddingBlock={8} paddingInline={4}>
-        <Grid columns={{ minWidth: 400, max: 2 }} gap={8}>
+        <Grid columns={{ minWidth: 280, max: 2 }} gap={8}>
             <GridSpan>
               <VStack gap={4} align="start">
-                <Heading level={2} size="xl" weight="bold" style={{ letterSpacing: '-0.02em' }}>
+                <Heading level={1} size="xl" weight="bold" style={{ letterSpacing: '-0.02em' }}>
                   Get in Touch
                 </Heading>
                 <Text size="lg" color="secondary">
@@ -118,7 +118,7 @@ export default function Contact() {
                   ))}
                 </VStack>
 
-                <HStack gap={3}>
+                <HStack gap={3} wrap="wrap">
                   {socialLinks.map((social) => (
                     <Button
                       key={social.name}

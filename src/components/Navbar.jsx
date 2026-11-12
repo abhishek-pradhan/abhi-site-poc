@@ -3,14 +3,7 @@ import {
   TopNav,
   TopNavHeading,
   TopNavItem,
-  MobileNav,
-  MobileNavToggle,
-  SideNavSection,
-  SideNavItem,
-  NavIcon,
-  Icon,
 } from '@astryxdesign/core';
-import { useState } from 'react';
 import RouterLink from './RouterLink';
 
 const navItems = [
@@ -22,13 +15,9 @@ const navItems = [
 
 export default function Navbar() {
   const location = useLocation();
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
   const isActive = (path) => location.pathname === path;
 
   return (
-    <>
-      {/* Desktop Navigation - TopNav */}
       <TopNav
         label="Main navigation"
         heading={
@@ -51,31 +40,6 @@ export default function Navbar() {
             ))}
           </>
         }
-        endContent={
-          <MobileNavToggle />
-        }
       />
-
-      {/* Mobile Navigation - MobileNav */}
-      <MobileNav
-        isOpen={mobileNavOpen}
-        onOpenChange={setMobileNavOpen}
-        header="Navigation"
-        label="Mobile navigation"
-      >
-        <SideNavSection title="Main">
-          {navItems.map((item) => (
-            <SideNavItem
-              key={item.path}
-              label={item.label}
-              href={item.path}
-              as={RouterLink}
-              isSelected={isActive(item.path)}
-              onClick={() => setMobileNavOpen(false)}
-            />
-          ))}
-        </SideNavSection>
-      </MobileNav>
-    </>
   );
 }

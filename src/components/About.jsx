@@ -44,12 +44,10 @@ const focusAreas = [
 export default function About() {
   return (
     <Section variant="transparent" paddingBlock={8} paddingInline={4}>
-        <Grid columns={2} gap={8} responsive={[
-          { maxWidth: 900, columns: 1 },
-        ]}>
+        <Grid columns={{ minWidth: 320, max: 2 }} gap={8}>
           <GridSpan>
             <VStack gap={4} align="start">
-              <Heading level={2} size="xl" weight="bold" style={{ letterSpacing: '-0.02em' }}>
+              <Heading level={1} size="xl" weight="bold" style={{ letterSpacing: '-0.02em' }}>
                 About Me
               </Heading>
               <Text size="lg" color="secondary">
@@ -87,7 +85,7 @@ export default function About() {
 
           <GridSpan>
             <VStack gap={6} align="center">
-              <Card variant="muted" padding={4} width="100%" maxWidth={300} style={{ aspectRatio: '1' }}>
+              <Card variant="default" padding={4} width="100%" maxWidth={300} style={{ aspectRatio: '1' }}>
                 <VStack align="center" justify="center" gap={3}>
                   <img src="/profile.svg" alt="Abhishek Pradhan" style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover' }} />
                   <Text weight="medium" color="secondary">
@@ -103,12 +101,12 @@ export default function About() {
                 <VStack gap={4}>
                   {experience.map((job) => (
                     <HStack key={job.period} gap={3} wrap="wrap">
-                      <StackItem size="fixed" width={140}>
+                      <StackItem size="static" style={{ width: 140 }}>
                         <Text size="sm" weight="semibold" color="primary">
                           {job.period}
                         </Text>
                       </StackItem>
-                      <StackItem size="grow">
+                      <StackItem size="fill">
                         <VStack gap={0.5} align="start">
                           <Heading level={4} size="sm" weight="bold">
                             {job.title}

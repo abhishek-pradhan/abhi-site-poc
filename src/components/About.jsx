@@ -89,7 +89,7 @@ export default function About() {
             <VStack gap={6} align="center">
               <Card variant="muted" padding={4} width="100%" maxWidth={300} style={{ aspectRatio: '1' }}>
                 <VStack align="center" justify="center" gap={3}>
-                  <Icon icon="user" size="xl" color="accent" />
+                  <img src="/profile.svg" alt="Abhishek Pradhan" style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover' }} />
                   <Text weight="medium" color="secondary">
                     Abhishek Pradhan
                   </Text>

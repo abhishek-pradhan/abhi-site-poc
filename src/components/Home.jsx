@@ -93,7 +93,7 @@ export default function Home() {
               <VStack align="center" gap={3}>
                 <Card variant="muted" padding={4} width="100%" style={{ aspectRatio: '1' }}>
                   <VStack align="center" justify="center" gap={3}>
-                    <Icon icon="cloud" size="xl" color="accent" />
+                    <img src="/profile.svg" alt="Abhishek Pradhan" style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover' }} />
                     <Text weight="medium" color="secondary">
                       Cloud Architecture
                     </Text>

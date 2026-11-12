@@ -35,7 +35,7 @@ export default function Navbar() {
           <TopNavHeading
             heading="Abhishek Pradhan"
             headingHref="/"
-            logo={<NavIcon icon={<Icon icon="menu" size="md" />} />}
+            logo={<img src="/profile.svg" alt="Abhishek Pradhan" style={{ width: 32, height: 32, borderRadius: '50%' }} />}
           />
         }
         startContent={
